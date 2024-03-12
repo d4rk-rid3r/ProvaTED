@@ -1,4 +1,6 @@
-let alunos = [
+import { criarPilha, inserirPilha, retirarPilha, Existe } from './pilha.js';
+
+let livros = [
     {
         titulo: "Dom Casmurro",
         paginas: 300,
@@ -24,7 +26,19 @@ let alunos = [
         paginas: 50,
         genero: "clássico",
     },
-]
+];
 
-import function (CriarPilha,) from "./pilha.js"
+let pilha = criarPilha(livros.length);
 
+console.log("-------------------------------------------------------------")
+for (let livro of livros) {
+    inserirPilha(pilha, livro);
+}
+console.log("-------------------------------------------------------------")
+for (let i = pilha.length - 1; i >= 0; i--) {
+    retirarPilha(pilha);
+}
+console.log("-------------------------------------------------------------")
+Existe(pilha, "Dom Casmurro");
+Existe(pilha, "IT a coisa");
+console.log("-------------------------------------------------------------")
